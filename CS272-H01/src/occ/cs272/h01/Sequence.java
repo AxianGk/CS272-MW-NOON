@@ -81,10 +81,10 @@ public class Sequence
     	}
     	return new Sequence(a);
     }
-    //public Sequence slice(int[] a, int[] b, int[] c)
-    //{
-    //	return new Sequence(a);
-    //}
+    public Sequence slice(int[] a, int[] b, int[] c)
+    {
+    	return new Sequence(a);
+    }
     
     
     
