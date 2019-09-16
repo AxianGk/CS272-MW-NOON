@@ -32,8 +32,8 @@ public class Sequence
     {
     	int inc = 0;
     	int[] a = new int[array.length];
-    	if(Math.abs(start) <= array.length)
-    	{
+    	//if(Math.abs(start) <= array.length)
+    	//{
     	    if(start >= 0)
     	    {
     	        for(int i = start; i < array.length; i++)
@@ -50,7 +50,7 @@ public class Sequence
     	            inc++;
     	        }
     	    }
-    	}
+    	//}
     	return new Sequence(a);
     }
     public Sequence slice(int start, int end)
