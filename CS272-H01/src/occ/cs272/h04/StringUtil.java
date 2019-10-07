@@ -8,21 +8,21 @@ public class StringUtil
         // TODO: Complete recursive method find, which
         // tests whether a given text contains a string str
         // Hint: If the text starts with the string you want to match, then you are done.
-        //       If not, consider the text that you obtain by removing the first character. 
-        String shorter = text.substring(0, text.length() - 1);
-        if(str == text.substring(0, str.length()))
+        //       If not, consider the text that you obtain by removing the first character.
+        boolean result = false;
+        if(text.length() >= str.length())
         {
-            return true;
+            String shorter = text.substring(1, text.length());
+            if(str.equals(text.substring(0, str.length())))
+            {
+                result = true;
+            }
+            else
+            {
+                result = StringUtil.find(shorter, str);
+            }
         }
-        else if(str == shorter.substring(0, str.length()))
-        {
-            return true;
-        }
-        else
-        {
-            find(shorter, str);
-        }
-        return false;
+        return result;
     }
 
 }
