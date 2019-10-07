@@ -1,3 +1,5 @@
+package occ.cs272.h04;
+
 import occ.cs272.h04.MyMath;
 
 public class TestMyMath {
