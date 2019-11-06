@@ -1,3 +1,5 @@
+package occ.cs272.h07.src;
+
 /**
    A program that demonstrates the LinkedList class
 */

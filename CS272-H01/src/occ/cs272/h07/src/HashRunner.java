@@ -1,3 +1,5 @@
+package occ.cs272.h07.src;
+
 /**
  * This program experiments with the String hashing function
  * and distributes 5757 5-letter words into 5749 buckets.
