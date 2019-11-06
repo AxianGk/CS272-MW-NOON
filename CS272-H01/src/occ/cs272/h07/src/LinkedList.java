@@ -62,8 +62,13 @@ public class LinkedList
     public Object get(int n)
     {
         // TODO: Complete this method . . .
-        
-        
+        if (first == null) { throw new NoSuchElementException(); }
+        for(int i = 0; i < n; i++)
+        {
+            first = first.next;
+        }
+        Object element = first.data;
+        return element;
         //return . . .
     }
 
@@ -75,8 +80,14 @@ public class LinkedList
     public void set(int n, Object newElement)
     {
         // TODO: Complete this method . . .
-        
-        
+        Node newNode = new Node();
+        for(int i = 0; i < n; i++)
+        {
+            first = newNode.next;
+        }
+        newNode.data = newElement;
+        newNode.next = first;
+        first = newNode;
     }
 
     /**
