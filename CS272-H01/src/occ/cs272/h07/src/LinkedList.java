@@ -63,10 +63,7 @@ public class LinkedList
     {
         // TODO: Complete this method . . .
         if (first == null) { throw new NoSuchElementException(); }
-        for(int i = 0; i < n; i++)
-        {
-            first = first.next;
-        }
+        getNode(n);
         Object element = first.data;
         return element;
         //return . . .
@@ -81,10 +78,7 @@ public class LinkedList
     {
         // TODO: Complete this method . . .
         Node newNode = new Node();
-        for(int i = 0; i < n; i++)
-        {
-            first = newNode.next;
-        }
+        getNode(n);
         newNode.data = newElement;
         newNode.next = first;
         first = newNode;
@@ -120,6 +114,7 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
+        Node newNode = new Node();
         boolean result = false;
         while(first != null)
         {
@@ -127,6 +122,7 @@ public class LinkedList
             {
                 result = true;
             }
+            first = newNode.next;
         }
         return result;
         //return . . .
@@ -141,8 +137,13 @@ public class LinkedList
         // Format: [obj1, obj2, obj3, ...]
         // Use .toString() to convert object data of each element to String
         // Build the answer using out += ...
-        
-        
+        if (first == null) { throw new NoSuchElementException(); }
+        Node newNode = new Node();
+        while(first != null)
+        {
+            out += first.toString();
+            first = newNode.next;
+        }
         
         return out + "]";
     }
