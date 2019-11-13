@@ -101,8 +101,13 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
-        
-        
+        if (first == null) { throw new NoSuchElementException(); }
+        Node newNode = new Node();
+        for(int i = 0; i < n; i++)
+        {
+            first = newNode.next;
+        }
+        return first;
         //return . . .
     }
 
@@ -115,8 +120,15 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
-        
-        
+        boolean result = false;
+        while(first != null)
+        {
+            if(first == obj)
+            {
+                result = true;
+            }
+        }
+        return result;
         //return . . .
     }
 
