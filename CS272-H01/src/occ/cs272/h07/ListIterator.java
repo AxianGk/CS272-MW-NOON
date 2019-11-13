@@ -1,4 +1,4 @@
-package occ.cs272.h07.src;
+package occ.cs272.h07;
 
 /**
    A list iterator allows access of a position in a linked list.    

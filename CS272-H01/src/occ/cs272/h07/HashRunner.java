@@ -1,4 +1,4 @@
-package occ.cs272.h07.src;
+package occ.cs272.h07;
 
 /**
  * This program experiments with the String hashing function
