@@ -16,7 +16,7 @@ public class LinkedList
       Constructs an empty linked list.
      */
     public LinkedList()
-    {  
+    {
         first = null;
     }
 
@@ -62,9 +62,7 @@ public class LinkedList
     public Object get(int n)
     {
         // TODO: Complete this method . . .
-        if (first == null) { throw new NoSuchElementException(); }
-        getNode(n);
-        Object element = first.data;
+        Object element = getNode(n).data;
         return element;
         //return . . .
     }
@@ -95,13 +93,16 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
-        if (first == null) { throw new NoSuchElementException(); }
-        Node newNode = new Node();
+        if (first == null) 
+        {
+            throw new NoSuchElementException(); 
+        }
+        Node newNode = first;
         for(int i = 0; i < n; i++)
         {
-            first = newNode.next;
+            newNode = newNode.next;
         }
-        return first;
+        return newNode;
         //return . . .
     }
 
@@ -114,15 +115,15 @@ public class LinkedList
         // TODO: Complete this method . . .
         //       (Start with first and traverse from there using next.
         //        No need to use iterator.)
-        Node newNode = new Node();
+        Node newNode = first;
         boolean result = false;
-        while(first != null)
+        while(newNode != null)
         {
-            if(first == obj)
+            if(newNode.data == obj)
             {
                 result = true;
             }
-            first = newNode.next;
+            newNode = newNode.next;
         }
         return result;
         //return . . .
@@ -137,12 +138,11 @@ public class LinkedList
         // Format: [obj1, obj2, obj3, ...]
         // Use .toString() to convert object data of each element to String
         // Build the answer using out += ...
-        if (first == null) { throw new NoSuchElementException(); }
-        Node newNode = new Node();
-        while(first != null)
+        Node newNode = first;
+        while(newNode != null)
         {
-            out += first.toString();
-            first = newNode.next;
+            out += newNode.toString();
+            newNode = newNode.next;
         }
         
         return out + "]";
