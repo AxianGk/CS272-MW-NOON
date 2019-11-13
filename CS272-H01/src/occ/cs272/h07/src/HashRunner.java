@@ -28,14 +28,14 @@ public class HashRunner
             Scanner in = new Scanner(words);
 
             // TODO: Complete program . . .
-            String word;
+            String word = in.next();
             while(in.hasNext())
             {
-                word = in.next();
                 int h = word.hashCode();
                 if(h < 0) { h = -h; }
                 int i = h % SIZE;
-                x[i] += 1;;
+                x[i] += 1;
+                word = in.next();
             }
             int num = 0;
             int a = 0;
