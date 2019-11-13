@@ -28,12 +28,33 @@ public class HashRunner
             Scanner in = new Scanner(words);
 
             // TODO: Complete program . . .
+            String word;
+            while(in.hasNext())
+            {
+                word = in.next();
+                int h = word.hashCode();
+                if(h < 0) { h = -h; }
+                int i = h % SIZE;
+                x[i] += 1;;
+            }
+            int num = 0;
+            int a = 0;
+            double avg = 0;
+            for(int i = 0; i < SIZE; i++)
+            {
+                if(x[i] == 0) num++;
+                else
+                {
+                    if(x[i] > x[a]) a = i;
+                    avg += x[i];
+                }
+            }
+            avg = avg / (SIZE - num);
             
             
-            
-            System.out.println("The number of empty buckets is " /*here*/);
-            System.out.println("The longest chain in a bucket is " /*here*/);
-            System.out.println("The average length of a chain is " /*here*/);
+            System.out.println("The number of empty buckets is " + num);
+            System.out.println("The longest chain in a bucket is " + a);
+            System.out.println("The average length of a chain is " + avg);
             in.close();   
         }
         catch (FileNotFoundException e)
